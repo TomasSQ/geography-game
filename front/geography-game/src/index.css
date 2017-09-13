@@ -1,13 +1,13 @@
 body {
+    background: #111;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     color: #FFF;
 }
 
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
+ul {list-style: none; padding: 0;}
 
 input {
     padding: 0.5em;
@@ -40,4 +40,18 @@ button {
 .available-filters > a {
     background: #FFF;
     color: #333;
+}
+
+.alternatives .alternative {
+    background: #33D;
+    border: 1px solid #33D;
+    margin-bottom: 1em;
+    padding: 1em;
+    opacity: 0.7
+}
+.alternatives .alternative:hover {
+    cursor: pointer;
+    background: #44F;
+    box-shadow: 0 0 10px 1px #33D;
+    opacity: 1;
 }

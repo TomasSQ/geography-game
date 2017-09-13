@@ -12,10 +12,13 @@ const countries = (state = [], action) => {
             )
             CountryMO.update(newState)
             break
+        case 'UPDATE_PONTUATION':
+            break
         default:
             break
     }
-    return CountryMO.findAll()
+    state.countries = CountryMO.findAll()
+    return state.countries
 }
 
 export default countries

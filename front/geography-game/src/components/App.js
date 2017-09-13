@@ -1,14 +1,12 @@
 import React from 'react'
-import AvailableFilters from './AvailableFilters'
-import AddCountry from '../containers/AddCountry'
-import VisibleCountryList from '../containers/VisibleCountryList'
+import CountryQuestionary from '../containers/CountryQuestionary'
+import PontuationQuestionary from '../containers/PontuationQuestionary'
 
 const App = () => (
     <div>
         <h1>Geography Game</h1>
-        <AddCountry />
-        <AvailableFilters />
-        <VisibleCountryList />
+        <PontuationQuestionary />
+        <CountryQuestionary />
     </div>
 )
 

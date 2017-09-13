@@ -18,3 +18,9 @@ export const toggleCountry = id => {
         id
     }
 }
+
+export const selectCountry = isCorrect => {
+    return {
+        type: 'UPDATE_PONTUATION'
+    }
+}
