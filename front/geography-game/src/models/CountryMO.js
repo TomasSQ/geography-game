@@ -9,11 +9,14 @@ const countries = [
 ]
 
 const initAll = () => {
+    _countries = []
     countries.forEach( country => {
         CountryMO.add(new CountryMO(country))
     })
     return CountryMO.findAll()
 }
+
+let _countries
 
 export default class CountryMO {
 
@@ -25,15 +28,22 @@ export default class CountryMO {
     }
 
     static findAll() {
-        const foundCountries = localStorage.getObjects('countries')
-        return foundCountries.length !== countries.length ? initAll() : foundCountries
+        _countries = _countries || initAll()
+        return _countries
+        //const foundCountries = localStorage.getObjects('countries')
+        //return foundCountries.length !== countries.length ? initAll() : foundCountries
     }
 
     static add(country) {
-        return localStorage.addToObjects('countries', country)
+        _countries.push(country)
+        //return localStorage.addToObjects('countries', country)
     }
 
-    static update(countries) {
-        localStorage.setObject('countries', countries)
+    static complete(id) {
+        let countries = CountryMO.findAll()
+        let country = countries.filter(c => c.id === id)
+        country = country[0] || {}
+        country.completed = true
+        //localStorage.setObject('countries', countries)
     }
 }

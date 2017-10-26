@@ -7,7 +7,7 @@ const Questionary = ({ question, alternatives, onCountryClick }) => (
         <ul className="alternatives">
         {alternatives.map((alternative, i) => (
             <li className="alternative" key={i} onClick={() =>
-                onCountryClick(question.id === alternative.id)
+                onCountryClick(alternative.id, question.id === alternative.id)
             } >
                 {alternative.text}
                 </li>

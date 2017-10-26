@@ -1,6 +1,7 @@
-export const choosedAnswer = isCorrect => {
+export const choosedAnswer = (id, isCorrect) => {
     return {
         type: 'CHOOSED_ANSWER',
-        isCorrect
+        isCorrect,
+        id
     }
 }

@@ -20,10 +20,12 @@ const shuffleArray = (array) => {
 }
 
 const getRandomCountry = (countries) => {
+    let tries = 0
     let c
     do {
         c = countries[parseInt(Math.random() * countries.length, 10)]
-    } while (c.completed)
+    } while (c.completed && tries++ !== countries.length)
+
     return c
 }
 
@@ -46,8 +48,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onCountryClick: isCorrect => {
-            dispatch(choosedAnswer(isCorrect))
+        onCountryClick: (id, isCorrect) => {
+            dispatch(choosedAnswer(id, isCorrect))
         }
     }
 }
